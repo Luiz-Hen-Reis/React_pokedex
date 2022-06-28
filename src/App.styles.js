@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
     justify-content: center;
     background-color: #3c5aa6;
     padding-bottom: 5rem;
-    height: fit-content;
+    min-height: 1000px;
 `;
 
 // Nav Bar
@@ -25,7 +25,7 @@ export const SearchContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 20px 10px 50px;
+    margin: 20px 10px 30px;
 `;
 
 export const SearchPokemonBarContainer = styled.div`
@@ -63,6 +63,7 @@ export const PokemonCard = styled.div`
     background-color: #263238;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 15px 15px 15px;
+    margin-bottom: 30px;
 `;
     
 export const PokemonId = styled.div`
@@ -114,4 +115,34 @@ export const ShowPokemonSearched = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+`;
+
+// Pokedex
+export const pokedexTitle = styled.h1`
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3);
+`;
+
+export const pokedexGrid = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    
+
+    @media screen and (min-width: 760px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1020px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 `;
