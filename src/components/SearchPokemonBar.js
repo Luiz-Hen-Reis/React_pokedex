@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { api } from "../api.js";
 import * as C from "./../App.styles.js";
+
+import { api } from "../api.js";
+
+
+import { PokeBallLoader } from "./PokeballLoader.js";
 import { Pokemon } from "./Pokemon.js";
 
 export const SearchPokemonBar = () => {
@@ -24,7 +28,7 @@ export const SearchPokemonBar = () => {
   };
 
   return (
-    <div>
+    <C.MainContainer>
       <C.SearchContainer>
         <C.SearchPokemonBarContainer>
           <input value={search} placeholder="Busque um pokémon..." onChange={handleSearchInput} />
@@ -34,13 +38,13 @@ export const SearchPokemonBar = () => {
         </C.SearchButton>
       </C.SearchContainer>
       {loading &&
-        <div>Carregando...</div>
+        <PokeBallLoader />
       }
       {!loading && pokemon && 
         <C.ShowPokemonSearched>
           <Pokemon pokemon={pokemon} />
         </C.ShowPokemonSearched>
       }
-    </div>
+    </C.MainContainer>
   );
 };
